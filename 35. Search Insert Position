@@ -1,1 +1,12 @@
 
+def search(lst,target):
+    l,r=0,len(lst)-1
+    while l<=r:
+        mid = (l+r)//2
+        if lst[mid]==target:
+            return mid
+        if lst[mid]>target:
+            r = mid-1
+        else:
+            l=mid+1
+    return l

@@ -1,0 +1,43 @@
+import  math
+class Solution:
+    def __init__(self, nums:int, target:int):
+        self.__nums = nums
+        self.__target = target
+        self.__start = 0
+        self.__end = len(self.__nums) - 1
+
+    def __set_middle(self):
+
+        return math.floor((self.__start + self.__end) / 2)
+
+    def __set_update_start_and_end(self):
+
+        while not (self.__nums[self.__set_middle()] == self.__target) and self.__start <= self.__end:
+
+            if self.__target < self.__nums[self.__set_middle()]:
+
+                self.__end = self.__set_middle() - 1
+
+            else:
+
+                self.__start = self.__set_middle() + 1
+
+            self.__set_middle()
+
+    def __get_search_target(self):
+
+        if self.__nums[self.__set_middle()] == self.__target:
+
+            return self.__set_middle()
+
+        else:
+
+            return -1
+
+    def __get_result(self):
+
+        self.__set_update_start_and_end()
+
+        return self.__get_search_target()
+    def __str__(self):
+        return f'{self.__get_result()}'

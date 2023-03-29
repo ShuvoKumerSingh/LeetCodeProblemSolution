@@ -41,3 +41,21 @@ class Solution:
         return self.__get_search_target()
     def __str__(self):
         return f'{self.__get_result()}'
+    
+    #Another Solution 
+    
+    class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        l,r=0,len(nums)-1
+        mid = l+(r-l)//2
+        while l<=r:
+            if target<nums[mid]:
+                r=mid-1
+            else:
+                l=mid+1
+            mid=l+(r-l)//2
+            
+        if nums[mid]==target:
+            return mid
+        else:
+            return -1

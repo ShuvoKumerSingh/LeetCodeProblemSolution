@@ -11,7 +11,7 @@ class Solution:
     
     
     '''
-    Another Solution using Two pointer
+    Another Solution is using Two pointer
     '''
     class Solution:
     def sortedSquares(self, nums: List[int]) -> List[int]:

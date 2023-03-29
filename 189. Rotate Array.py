@@ -20,7 +20,7 @@ class Solution:
             nums[l],nums[r]=nums[r],nums[l]
             l,r=l+1,r-1
 '''
-Another Solution is
+Another Solution 
 "'
 class Solution:
     def rotate(self, nums: List[int], k: int) -> None:

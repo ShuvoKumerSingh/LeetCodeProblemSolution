@@ -18,5 +18,5 @@ class Solution:
                 if nums[i]<target:
                     index=i+1
                 i+=1
-                lenth-=1
+                lenth=lenth-1
             return index

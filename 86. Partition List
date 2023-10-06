@@ -1,0 +1,30 @@
+class Solution(object):
+    def partition(self, head, x):
+        """
+        :type head: ListNode
+        :type x: int
+        :rtype: ListNode
+        """
+        pre = ListNode(-1)
+        headPre = pre
+        
+        post = ListNode(0)
+        headPost = post
+
+        curr = head
+
+        while curr:
+            if curr.val<x:
+                pre.next = ListNode(curr.val)
+                pre = pre.next
+            else:
+                post.next = ListNode(curr.val)
+                post = post.next
+            
+            curr = curr.next
+        
+        if post and pre:
+            pre.next = headPost.next
+        
+        return headPre.next
+
